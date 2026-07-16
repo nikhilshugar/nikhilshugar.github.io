@@ -612,7 +612,23 @@ main > .contact-section > .shell { width: min(calc(100% - 64px), var(--max)); }
   line-height: 1.7;
 }
 
-.education-courses strong { color: var(--ink); font-weight: 600; }
+.education-courses strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.education-courses ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 24px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.education-courses li { padding-left: 2px; }
+.education-courses li::marker { color: var(--accent); }
 
 .skills-grid {
   display: grid;
@@ -1043,6 +1059,7 @@ main > .contact-section > .shell { width: min(calc(100% - 64px), var(--max)); }
   .experience-meta, .education-meta { grid-column: auto; grid-row: auto; text-align: left; }
   .experience-bullets li { min-height: auto; }
   .education-item > div:nth-child(2) { grid-column: auto; }
+  .education-courses ul { grid-template-columns: 1fr; }
   .skills-grid, .credential-grid { grid-template-columns: 1fr; }
   .skill-group { min-height: 0; padding: 24px; }
   .contact-form { grid-template-columns: 1fr; }
